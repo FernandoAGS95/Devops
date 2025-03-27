@@ -1,0 +1,26 @@
+name : django-webapp
+on: 
+    push:
+          branches:
+              -master
+jobs:
+      build:
+            runs-on: ubutuntu-latest
+            steps:
+                  - name: Comprobar repositorio
+                    uses: actions/checkout@v2
+
+                  - name: configurar Python
+                    uses: actions/setup-python@v2
+                    with:
+                        python-version: 3.13
+                  - name: instalar dependencias
+                    # Como no tenemos el archivo en la misma carpeta           
+                    run: |
+                              cd ejercicioTrackDevops1
+                              pip install -r requirements.txt
+                  - name: Ejecutar Pruebas
+                    run: | 
+                              cd ejercicioTrackDevops1
+                              python manage.py test
+                  
