@@ -2,7 +2,7 @@ name : django-webapp
 on: 
     push:
           branches:
-              -master
+              -main
 jobs:
       build:
             runs-on: ubutuntu-latest
