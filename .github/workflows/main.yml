@@ -5,7 +5,7 @@ on:
               - main
 jobs:
       build:
-            runs-on: ubutuntu-latest
+            runs-on: ubuntu-latest
             steps:
                   - name: Comprobar repositorio
                     uses: actions/checkout@v2
